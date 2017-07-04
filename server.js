@@ -1,6 +1,7 @@
 'use strict';
 
 const http = require('http');
+const { env } = require('process');
 
 const server = http.createServer((req, res) => {
   const body = JSON.stringify({
@@ -25,4 +26,4 @@ const server = http.createServer((req, res) => {
   res.end(body);
 });
 
-server.listen(8000);
+server.listen(env.PORT || 8000);
